@@ -5,7 +5,7 @@ require('./lib/patron')
 also_reload('lib/**/*.rb')
 require("pg")
 
-DB = PG.connect({:dbname => "library"})
+DB = PG.connect({:dbname => "library_test"})
 
 get("/") do
   @books = Book.all()
@@ -16,8 +16,9 @@ get("/employee") do
   erb(:employee)
 end
 
-post("/employee") do
-  book = Book.new({:title => params.fetch("title"), :author => params.fetch("author")})
+post("/") do
+  book = Book.new({:title => params.fetch("title"), :author => params.fetch("author"), :id => nil})
   book.save()
+  @books = Book.all()
   erb(:book_success)
 end
