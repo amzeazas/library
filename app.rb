@@ -16,10 +16,8 @@ get("/employee") do
   erb(:employee)
 end
 
-post("/") do
-  title = params.fetch("title")
-  author = params.fetch("author")
-  book = Book.new({:title => title, :author => author})
+post("/employee") do
+  book = Book.new({:title => params.fetch("title"), :author => params.fetch("author")})
   book.save()
   erb(:book_success)
 end
