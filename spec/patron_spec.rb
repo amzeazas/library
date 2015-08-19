@@ -4,7 +4,7 @@ describe('Patron') do
   describe('#==') do
     it('is the same patron if it has the same name') do
       patron1 = Patron.new({:name => "Bruce Wayne"})
-      patron1 = Patron.new({:name => "Bruce Wayne"})
+      patron2 = Patron.new({:name => "Bruce Wayne"})
       expect(patron1).to(eq(patron2))
     end
   end
