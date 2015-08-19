@@ -36,5 +36,4 @@ describe('Book') do
       expect(Book.all()).to(eq([test_book]))
     end
   end
-
 end

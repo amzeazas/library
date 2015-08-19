@@ -24,6 +24,4 @@ class Book
   define_method(:save) do
     DB.exec("INSERT INTO books (title, author) VALUES ('#{@title}', '#{@author}');")
   end
-
-
 end
