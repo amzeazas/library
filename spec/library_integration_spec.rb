@@ -10,6 +10,6 @@ describe('adding a new book', {:type => :feature}) do
     fill_in('title', :with => 'The Hobbit')
     fill_in('author', :with => 'J.R.R. Tolkien')
     click_button('Add Book')
-    expect(page).to have_content('Success!')
+    expect(page).to have_content('Your book has been successfully added!')
   end
 end
