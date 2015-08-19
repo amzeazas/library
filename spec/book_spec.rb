@@ -17,7 +17,7 @@ describe('Book') do
   end
 
   describe('#author') do
-    it('returns the title of the book') do
+    it('returns the author of the book') do
       test_book = Book.new({:title => "The Hobbit", :author => "J.R.R. Tolkien"})
       expect(test_book.author()).to(eq("J.R.R. Tolkien"))
     end
