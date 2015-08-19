@@ -12,6 +12,10 @@ get("/") do
   erb(:index)
 end
 
+get("/employee") do
+  erb(:employee)
+end
+
 post("/") do
   title = params.fetch("title")
   author = params.fetch("author")
