@@ -1,0 +1,21 @@
+<center>
+<h1>Welcome to the Olympus Mountain Public Library!</h1>
+<h3>Our small library believes in the power of reading and wants to make books accessible to all. See below for a list of available books and check out your next adventure!</h3>
+</center>
+<br>
+<br>
+<% if @books.any?() %>
+<h2><b><u>Available Books:</u></b></h2>
+<ul>
+  <% @books.each() do |book| %>
+    <li><a href="/book/<%= book.id() %>"><%= book.title() %></a></li>
+  <% end %>
+</ul>
+<% else %>
+<p>There are books availble. Please check back later!</p>
+<% end %>
+<br>
+<br>
+<right>
+<a href="/employee">Library Employees</a>
+</right>

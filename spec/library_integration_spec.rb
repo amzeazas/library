@@ -6,7 +6,7 @@ set(:show_exceptions, false)
 describe('adding a new book', {:type => :feature}) do
   it('allows a user to new a list of books and add a new one') do
     visit('/')
-    click_link('Add New Book')
+    click_link('Library Employees')
     fill_in('title', :with => 'The Hobbit')
     fill_in('author', :with => 'J.R.R. Tolkien')
     click_button('Add Book')
