@@ -27,4 +27,10 @@ class Book
     saved_book = DB.exec("INSERT INTO books (title, author) VALUES ('#{@title}', '#{@author}') RETURNING id;")
     @id = saved_book.first.fetch("id").to_i()
   end
+
+  define_method(:update) do |attributes|
+    @title = attributes.fetch(:first_name)
+    @id = self.id()
+    DB.exec("UPDATE lists SET first_name = '#{@title}' WHERE id = #{@id};")
+  end
 end
