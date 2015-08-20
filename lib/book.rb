@@ -11,10 +11,6 @@ class Book
     self.title().==(another_book.title())
   end
 
-  define_method(:id) do
-    DB.exec("SELECT id FROM books WHERE title = '#{@title}';")
-  end
-
   define_singleton_method(:all) do
     returned_books = DB.exec("SELECT * FROM books;")
     books = []
