@@ -1,6 +1,7 @@
 require('capybara/rspec')
 require('launchy')
 require('./app')
+require('spec_helper')
 Capybara.app = Sinatra::Application
 set(:show_exceptions, false)
 

@@ -1,12 +1,12 @@
 <center>
-<h1>Olympus Mountain Public Library :: Patron List</h1>
+<h1>Mount Olympus Public Library :: Patron List</h1>
 </center>
 <br>
 <% if @patrons.any?() %>
 <h2><b><u>Patron List:</u></b></h2>
 <ul>
   <% @patrons.each() do |patron| %>
-    <li><a href="/patron/<%= patron.id() %>"><%= patron.last_name()%>, <%= atron.first_name() %></a></li>
+    <li><a href="/patrons/<%= patron.id() %>"><%= patron.last_name()%>, <%= patron.first_name() %></a></li>
   <% end %>
 </ul>
 <% else %>
