@@ -23,6 +23,6 @@ describe('adding a new patron', {:type => :feature}) do
     fill_in('last_name', :with => 'Wayne')
     fill_in('phone', :with => '5038675309')
     click_button('Add Patron')
-    expect(page).to have_content('Your book has been successfully added!')
+    expect(page).to have_content('The patron has been successfully added!')
   end
 end

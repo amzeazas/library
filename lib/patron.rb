@@ -9,7 +9,7 @@ class Patron
   end
 
   define_method(:==) do |another_patron|
-    self.first_name().==(another_patron.first_name()) && self.last_name().==(another_patron.last_name()) && self.phone().==(another_patron.phone()) && self.id.==(another_ptron.id())
+    self.first_name().==(another_patron.first_name()) && self.last_name().==(another_patron.last_name()) && self.phone().==(another_patron.phone()) && self.id.==(another_patron.id())
   end
 
   define_singleton_method(:all) do
@@ -19,7 +19,7 @@ class Patron
       first_name = patron.fetch("first_name")
       last_name = patron.fetch("last_name")
       phone = patron.fetch("phone")
-      id = patron.fetch("id")
+      id = patron.fetch("id").to_i()
       patrons.push(Patron.new({:first_name => first_name, :last_name => last_name, :phone => phone, :id => id}))
     end
     patrons

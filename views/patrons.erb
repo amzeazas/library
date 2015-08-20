@@ -1,0 +1,25 @@
+<center>
+<h1>Olympus Mountain Public Library :: Patron List</h1>
+</center>
+<br>
+<% if @patrons.any?() %>
+<h2><b><u>Patron List:</u></b></h2>
+<ul>
+  <% @patrons.each() do |patron| %>
+    <li><a href="/patron/<%= patron.id() %>"><%= patron.last_name()%>, <%= atron.first_name() %></a></li>
+  <% end %>
+</ul>
+<% else %>
+<p>There are no patrons at this time.</p>
+<% end %>
+<br>
+<h3>Add a new patron here:</h3>
+<form action="/patrons" method="post">
+  <label for="first_name">Patron's first name:</label>
+  <input id="first_name" name="first_name" class="form-control" type="text" placeholder="Type patron's first name here.">
+  <label for="last_name">Patron's last name:</label>
+  <input id="last_name" name="last_name" class="form-control" type="text" placeholder="Type patron's last name here.">
+  <label for="phone">Patron's phone number:</label>
+  <input id="phone" name="phone" class="form-control" type="text" placeholder="Type patron's phone number here.">
+  <button type="submit">Add Patron</button>
+</form>
