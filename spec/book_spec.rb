@@ -36,4 +36,13 @@ describe('Book') do
       expect(Book.all()).to(eq([test_book]))
     end
   end
+
+  describe("#update") do
+    it("lets you update books in the database") do
+      book = Book.new({:title => "The Hobbit", :author => "J.R.R. Tolkien", :id => nil})
+      book.save()
+      book.update({:title => "The Hobbit: There and Back Again"})
+      expect(book.title()).to(eq("The Hobbit: There and Back Again"))
+    end
+  end
 end
